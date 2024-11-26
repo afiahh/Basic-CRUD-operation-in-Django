@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mb-4">{{ entry.title }}</h2>
+        <p><strong>Mood:</strong> {{ entry.mood }}</p>
+        <p><strong>Date:</strong> {{ entry.date }}</p>
+        <hr>
+        <h5>Content:</h5>
+        <p>{{ entry.content }}</p>
+
+        <a href="{% url 'diary_list' %}" class="btn btn-primary">Back to Diary List</a>
+        <a href="{% url 'diary_update' entry.pk %}" class="btn btn-warning">Edit</a>
+    </div>
+{% endblock %}
